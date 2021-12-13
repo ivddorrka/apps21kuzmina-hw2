@@ -1,14 +1,13 @@
 package ua.edu.ucu.collections.immutable;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 public final class ImmutableArrayList implements ImmutableList {
     private final int length;
     private final Object[] array;
 
     public ImmutableArrayList(Object[] elements) {
-        if (elements.length==0){
+        if (elements.length == 0) {
             this.array = new Object[]{};
             this.length = 0;
         } else {

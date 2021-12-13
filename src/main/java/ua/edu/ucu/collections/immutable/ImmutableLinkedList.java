@@ -6,11 +6,11 @@ public final class ImmutableLinkedList implements ImmutableList {
     private final int length;
 
     public ImmutableLinkedList(Object[] elements) {
-        int length1;
+        int lengthA;
         Node prevNode = null;
-        length1 = 0;
+        lengthA = 0;
         for (Object element: elements) {
-            length1++;
+            lengthA++;
             Node thisNode = new Node();
             thisNode.setValue(element);
             thisNode.setPrevious(prevNode);
@@ -21,7 +21,7 @@ public final class ImmutableLinkedList implements ImmutableList {
             }
             prevNode = thisNode;
         }
-        length = length1;
+        length = lengthA;
         tail = prevNode;
     }
 
@@ -98,7 +98,7 @@ public final class ImmutableLinkedList implements ImmutableList {
         Node headNode = head;
         int i = 0;
         while (headNode != null) {
-            if (i == index){
+            if (i == index) {
                 headNode = headNode.getNext();
             }
             newList[i] = headNode.getValue();
@@ -124,7 +124,7 @@ public final class ImmutableLinkedList implements ImmutableList {
         Node headNode = head;
         int i = 0;
         while (headNode != null) {
-            if (headNode.getValue()==e){
+            if (headNode.getValue() == e) {
                 return i;
             }
             i++;
@@ -141,7 +141,7 @@ public final class ImmutableLinkedList implements ImmutableList {
     @Override
     public ImmutableList clear() {
         Object[] arrayNew = toArray();
-        for(int i = 0; i<length; i++) {
+        for (int i = 0; i < length; i++) {
             arrayNew[i] = null;
         }
         return new ImmutableLinkedList(arrayNew);
