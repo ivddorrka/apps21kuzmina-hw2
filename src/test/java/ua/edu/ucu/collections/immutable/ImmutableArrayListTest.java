@@ -70,7 +70,9 @@ public class ImmutableArrayListTest extends TestCase {
 
     public void testIsEmpty() {
         ImmutableArrayList array = new ImmutableArrayList(new Object[] {});
-        assertEquals(array.size(), 0);
+        assertTrue(array.isEmpty());
+        ImmutableArrayList arrayA = new ImmutableArrayList(new Object[] {1});
+        assertFalse(arrayA.isEmpty());
     }
 
     public void testToArray() {
